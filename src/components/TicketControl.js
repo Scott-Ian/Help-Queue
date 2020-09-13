@@ -19,7 +19,7 @@ class TicketControl extends React.Component {
   handleClick = () => {
     if (this.state.selectedTicket != null) {
       this.setState({
-        formVisibleonPage: false,
+        formVisibleOnPage: false,
         selectedTicket: null,
         editing : false
       });
