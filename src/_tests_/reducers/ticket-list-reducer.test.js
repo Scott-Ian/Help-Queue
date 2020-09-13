@@ -50,7 +50,7 @@ describe('ticketListReducer', () => {
       type: 'DELETE_TICKET',
       id: 1
     };
-    expect(ticketLIstReducer(currentState,action)).toEqual({
+    expect(ticketListReducer(currentState,action)).toEqual({
       2: {names: 'Jasmin and Justine',
       location: '2a',
       issue: 'Reducer has side effects.',
