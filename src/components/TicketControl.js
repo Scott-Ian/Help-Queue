@@ -3,6 +3,7 @@ import NewTicketForm from './NewTicketForm';
 import TicketList from './TicketList';
 import TicketDetail from './TicketDetail';
 import EditTicketForm from './EditTicketForm';
+import { connect } from 'react-redux';
 
 class TicketControl extends React.Component {
   
@@ -10,7 +11,6 @@ class TicketControl extends React.Component {
     super(props);
     this.state = {
       formVisibleOnPage: false,
-      masterTicketList: [],
       selectedTicket: null,
       editing: false
     };
@@ -92,5 +92,7 @@ class TicketControl extends React.Component {
     );
   }
 }
+
+TicketControl = connect()(TicketControl);
 
 export default TicketControl;
