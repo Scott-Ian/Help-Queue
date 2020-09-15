@@ -15,4 +15,19 @@ describe('help queue actions', () => {
     });
   });
 
+  it('addTicket should create ADD_TICKET action', () => {
+    expect(actions.addTicket({
+      names: 'Jo and Jasmine',
+      location: '3E',
+      issue: 'Redux not working!',
+      id: 1
+    }))
+    .toEqual({
+      names: 'Jo and Jasmine',
+      location: '3E',
+      issue: 'Redux not working!',
+      id: 1
+    });
+  });
+
 });
