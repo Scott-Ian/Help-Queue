@@ -114,7 +114,7 @@ class TicketControl extends React.Component {
 
 TicketControl.propTypes = {
   masterTicketList: PropTypes.object,
-  formVisibleONPage: PropTypes.bool
+  formVisibleOnPage: PropTypes.bool
 };
 
 const mapStateToProps = state => {
