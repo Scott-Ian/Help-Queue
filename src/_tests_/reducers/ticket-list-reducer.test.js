@@ -57,4 +57,5 @@ describe('ticketListReducer', () => {
       id: 2 }
     })
   });
+
 });
