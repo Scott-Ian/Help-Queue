@@ -23,6 +23,7 @@ describe('help queue actions', () => {
       id: 1
     }))
     .toEqual({
+      type: 'ADD_TICKET',
       names: 'Jo and Jasmine',
       location: '3E',
       issue: 'Redux not working!',
