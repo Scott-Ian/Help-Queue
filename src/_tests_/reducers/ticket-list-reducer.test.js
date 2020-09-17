@@ -36,7 +36,7 @@ describe('ticketListReducer', () => {
       location: location,
       issue: issue,
       id: id,
-      formattedWaitTime: newMoment().fromNow(true);
+      formattedWaitTime: new Moment().fromNow(true)
     };
 
     expect(ticketListReducer({}, action)).toEqual({
@@ -70,7 +70,7 @@ describe('ticketListReducer', () => {
       formattedWaitTime: '4 minutes',
       id: id
     };
-    expect(ticketLIstReducer({ [id] : ticketData}, action)).toEqual({
+    expect(ticketListReducer({ [id] : ticketData}, action)).toEqual({
       [id] : {
         names: names,
         location: location,
