@@ -1,5 +1,6 @@
 import ticketListReducer from '../../reducers/ticket-list-reducer';
 import * as c from './../../actions/ActionTypes';
+import Moment from 'moment';
 
 describe('ticketListReducer', () => {
 
@@ -19,6 +20,7 @@ describe('ticketListReducer', () => {
     names: 'Ryan & Aiment',
     location: '4b',
     issue: 'Redux action is not working correctly.',
+    timeOpen: 0,
     id: 1
   };
 
@@ -26,14 +28,15 @@ describe('ticketListReducer', () => {
     expect(ticketListReducer({}, {type: null})).toEqual({});
   });
 
-  test('Should successfully add new ticket data to masterTicketList', () => {
+  test('Should successfully add a ticket ot the ticket list that includes Moment-formatted wait times', () => {
     const {names, location, issue, id } = ticketData;
     action = {
       type: c.ADD_TICKET,
       names: names,
       location: location,
       issue: issue,
-      id: id
+      id: id,
+      formattedWaitTime: newMoment().fromNow(true);
     };
 
     expect(ticketListReducer({}, action)).toEqual({
@@ -41,7 +44,8 @@ describe('ticketListReducer', () => {
         names: names,
         location: location,
         issue: issue,
-        id: id
+        id: id,
+        formattedWaitTime: 'a few seconds'
       }
     })
   });
@@ -57,6 +61,25 @@ describe('ticketListReducer', () => {
       issue: 'Reducer has side effects.',
       id: 2 }
     })
+  });
+
+  test('Should add a formatted wait time to ticket entry', () => {
+    const { names, location, issue, timeOpen, id } = ticketData;
+    action = {
+      type: c.UPDATE_TIME,
+      formattedWaitTime: '4 minutes',
+      id: id
+    };
+    expect(ticketLIstReducer({ [id] : ticketData}, action)).toEqual({
+      [id] : {
+        names: names,
+        location: location,
+        issue: issue,
+        timeOpen: timeOpen,
+        id: id,
+        formattedWaitTime: '4 minutes'
+      }
+    });
   });
 
 });
