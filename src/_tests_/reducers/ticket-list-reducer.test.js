@@ -28,7 +28,7 @@ describe('ticketListReducer', () => {
     expect(ticketListReducer({}, {type: null})).toEqual({});
   });
 
-  test('Should successfully add a ticket ot the ticket list that includes Moment-formatted wait times', () => {
+  test('Should successfully add a ticket to the ticket list that includes Moment-formatted wait times', () => {
     const {names, location, issue, id } = ticketData;
     action = {
       type: c.ADD_TICKET,

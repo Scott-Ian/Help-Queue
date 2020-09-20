@@ -25,7 +25,7 @@ export default (state ={}, action) => {
         [id] : newTicket
       });
       return updatedState;
-      default:
+    default:
       return state;
   }
 };
