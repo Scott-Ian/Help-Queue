@@ -12,7 +12,7 @@ function ReusableForm(props) {
         <input
           type='text'
           name='location'
-          placeholder='Locatoin' />
+          placeholder='Location' />
         <textarea
           name='issue'
           placeholder='Describe your issue.' />

@@ -11,7 +11,7 @@ function NewTicketForm(props){
     event.preventDefault();
     props.onNewTicketCreation();
 
-    return firestore.collectino('tickets').add(
+    return firestore.collection('tickets').add(
       {
         names: event.target.names.value,
         location: event.target.location.value,
