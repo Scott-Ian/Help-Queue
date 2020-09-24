@@ -27,6 +27,21 @@ function Signin(){
           placeholder='Password' />
         <button type='submit'>Sign up!</button>
       </form>
+      
+      <hr/>
+
+      <h1> Sign In</h1>
+      <form onSubmit ={doSignIn}>
+        <input
+          type='text'
+          name='signinEmail'
+          placeholder='email' />
+        <input
+          type='password'
+          name='signinPassword'
+          placeholder='Password' />
+        <button type='submit'>Sign In!</button>
+      </form>
     </React.Fragment>
   )
 }
