@@ -13,6 +13,18 @@ function Signin(){
     });
   }
 
+  function doSignIn(event) {
+    event.preventDefault();
+    const email = event.target.email.value;
+    const password = event.target.signinPassword.value;
+
+    firebase.auth().signInWithEmailAndPassword(email, password).then(function() {
+      console.log('Successfully signed in!');
+    }).catch(function(error) {
+      console.log(error.message)
+    });
+  }
+
   return(
     <React.Fragment>
       <h1>Sign In</h1>
