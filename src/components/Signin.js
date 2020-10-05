@@ -1,4 +1,5 @@
 import React from 'react';
+import firebase from 'firebase/app';
 
 function Signin(){
 
@@ -15,7 +16,7 @@ function Signin(){
 
   function doSignIn(event) {
     event.preventDefault();
-    const email = event.target.email.value;
+    const email = event.target.signinEmail.value;
     const password = event.target.signinPassword.value;
 
     firebase.auth().signInWithEmailAndPassword(email, password).then(function() {
@@ -35,7 +36,7 @@ function Signin(){
 
   return(
     <React.Fragment>
-      <h1>Sign In</h1>
+      <h1>Sign Up</h1>
       <form onSubmit={doSignUp}>
         <input
           type='text'
